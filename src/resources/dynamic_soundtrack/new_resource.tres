@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="SongData" load_steps=5 format=3 uid="uid://wevcdjamppqe"]
+
+[ext_resource type="Script" path="res://src/resources/dynamic_soundtrack/song_data.gd" id="1_04bf6"]
+[ext_resource type="AudioStream" uid="uid://c34bws3t0g4ub" path="res://assets/audio/music/Radiative.ogg" id="1_4sqpa"]
+[ext_resource type="Script" path="res://src/resources/dynamic_soundtrack/transition_points_data.gd" id="3_br5xg"]
+
+[sub_resource type="Resource" id="Resource_d1w8f"]
+script = ExtResource("3_br5xg")
+custom_transition_points = null
+song_length = null
+bpm = null
+time_signature_top = null
+use_beat_recurring_points = null
+beats_per_recurring_point = null
+use_bar_recurring_points = null
+bars_per_recurring_point = null
+
+[resource]
+script = ExtResource("1_04bf6")
+full_song_file = ExtResource("1_4sqpa")
+layers = Array[AudioStreamOggVorbis]([])
+transition_points_data = SubResource("Resource_d1w8f")

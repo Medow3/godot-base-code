@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui/main_menu/visual_options_menu/visual_options_menu.gd" type="Script" id=1]
+
+[node name="visual_options_menu" type="Control"]
+script = ExtResource( 1 )
