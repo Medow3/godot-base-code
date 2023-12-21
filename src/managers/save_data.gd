@@ -1,6 +1,5 @@
 extends Node
 
-const VERSION: String = "0.0.0.0"
 const SAVE_PATH: String = "user://save.dat"
 const MAX_PROFILES = 10
 
@@ -8,7 +7,7 @@ const MAX_PROFILES = 10
 # Each variable must have a default value that will be used when a profile is started for the first time.
 var _global_saved_variables: Dictionary = {
 	# Example: "profile_time": 0.0,
-	
+	"test_variable": 1,
 }
 var _default_global_saved_variables_values: Dictionary # Set in _init() function
 
@@ -29,6 +28,8 @@ var _profiles_data: Dictionary = {
 
 func _init() -> void:
 	_default_global_saved_variables_values = _global_saved_variables.duplicate(true)
+	# Load in any save data if it exists.
+	load_data(-1)
 
 
 func create_new_profile(profile_number: int) -> bool:
@@ -91,7 +92,7 @@ func save_data(profile_number: int = -1) -> void:
 		room_saved_object_data.append(node_stats)
 	
 	var data = {
-		"version": VERSION,
+		"version": ProjectSettings.get_setting("application/config/version"),
 		"settings_data": Settings.get_settings_save_data(),
 		"profiles": _profiles_data,
 	}
@@ -115,7 +116,7 @@ func load_data(profile_number: int = -1) -> bool:
 			if not typeof(player_data) == TYPE_DICTIONARY:
 				push_error("Data corrupted")
 				player_data = {
-					"version": VERSION,
+					"version": ProjectSettings.get_setting("application/config/version"),
 					"settings_data": Settings.get_settings_save_data(),
 					"profiles": _profiles_data,
 				}

@@ -4,3 +4,12 @@ res://src/resources/dynamic_soundtrack/song_data.gd
 res://src/resources/dynamic_soundtrack/new_resource.tres
 res://src/tools/keybind_manager/input_action_keybinds.gd
 res://src/managers/save_data.gd
+res://src/testing/scene1.tscn
+res://src/testing/scene1.gd
+res://src/ui/main_menu/controls_menu/controls_menu.tscn
+res://src/managers/sound_fx.tscn
+res://src/main.tscn
+res://src/managers/music.tscn
+res://src/managers/fade.tscn
+res://src/testing/scene2.tscn
+res://src/main.gd
