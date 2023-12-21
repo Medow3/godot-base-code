@@ -6,7 +6,7 @@ class_name InputActionKeybinds extends Node
 @export var joy_button_keybind: InputEventJoypadButton
 @export var joy_axis_keybind: InputEventJoypadMotion
 
-const NO_BUTTON_ASSIGNED_TO_ACTION_DISPLAY_TEXT: String = "[Button Unassigned]"
+const NO_BUTTON_ASSIGNED_TO_ACTION_DISPLAY_TEXT: String = "[Unassigned]"
 
 const MOUSE_BUTTON_STRINGS: Dictionary = {
 	MOUSE_BUTTON_LEFT: "Left Click",

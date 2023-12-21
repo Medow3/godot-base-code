@@ -8,6 +8,6 @@ class_name SongData extends Resource
 
 func call_func_on_next_beat(to_call: Callable, timer: SceneTreeTimer, my_player: AudioStreamPlayer) -> void:
 	var current_playtime: float = my_player.get_playback_position()
-	timer.start(transition_points_data.get_time_until_next_beat())
+	timer.start(transition_points_data.get_time_until_next_beat(current_playtime))
 	await timer.timeout
 	to_call.call()
