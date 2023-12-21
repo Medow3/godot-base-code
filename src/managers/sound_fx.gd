@@ -42,6 +42,16 @@ func stop_looping_sfx(sfx_data: SFXData) -> void:
 			sfx_data.single_sfx.fade_out_looping_sfx(i, tween)
 
 
+func stop_all_sfx(fade_out_length: float) -> void:
+	var tween: Tween = get_tree().create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_SINE).set_parallel()
+	for i: AudioStreamPlayer in audio_players.get_children():
+		if i.playing:
+			tween.tween_property(i, "volume_db", -80.0, fade_out_length)
+	await tween.finished
+	for i: AudioStreamPlayer in audio_players.get_children():
+		i.stop()
+
+
 # Using this because the AudioStreamPlayer finished signal doesn't work.
 func remove_bus_after_time(bus_id: int, seconds: float) -> void:
 	await get_tree().create_timer(seconds).timeout

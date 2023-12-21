@@ -1,6 +1,12 @@
 res://default_env.tres
+res://src/testing/scene1.tscn
 res://src/ui/main_menu/controls_menu/controls_menu.tscn
 res://src/managers/sound_fx.tscn
 res://src/tools/sound_effect_player_2d.tscn
 res://src/main.tscn
 res://src/managers/music.tscn
+res://src/managers/fade.tscn
+res://src/testing/scene2.tscn
+res://src/managers/fade.gd
+res://src/testing/scene2.gd
+res://src/testing/scene1.gd
