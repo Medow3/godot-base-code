@@ -24,7 +24,6 @@ func fade_and_change_scene(scene_path: String,
 		fade_trans: Tween.TransitionType = DEFAULT_FADE_TRANS) -> void:
 	
 	var change_scene_function: Callable = func (scene_path: String):
-		print("change scene")
 		SFX.stop_all_sfx(fade_length)
 		get_tree().change_scene_to_file(scene_path)
 	
@@ -55,7 +54,7 @@ func fade_out_call_func_fade_in(function: Callable = Callable(), function_argvs:
 	currently_fading = true
 	var fade_tween: Tween = create_tween().set_ease(fade_ease).set_trans(fade_trans)
 	fade_tween.tween_property(color_rect, "color:a", 1.0, fade_length).from(0.0)
-	fade_tween.tween_property(color_rect, "color:a", 0.0, fade_length).from(1.0)
+	fade_tween.tween_property(color_rect, "color:a", 0.0, fade_length).from(1.0).set_delay(fade_mid_delay)
 	await fade_tween.step_finished
 	function.callv(function_argvs)
 	await fade_tween.finished

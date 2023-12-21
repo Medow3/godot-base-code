@@ -141,7 +141,7 @@ func _set_up_tweening(my_player, tween: Tween) -> void:
 		tween.tween_property(my_player, "volume_db", FADE_OFF_VALUE, fade_out_duration).from(fade_into_volume).set_ease(fade_out_ease).set_trans(fade_out_trans).set_delay(fade_out_delay)
 
 
-func _set_up_2d_paramters(my_player: AudioStreamPlayer2D) -> void:
+func _set_up_2d_paramters(my_player) -> void:
 	if not my_player is AudioStreamPlayer2D:
 		return
 	
