@@ -2,7 +2,8 @@ extends Node2D
 
 
 func _ready():
-	Music.play_song("Radiative")
+	SaveData.load_data(-1)
+	#Music.play_song("Radiative")
 
 
 func _on_button_pressed():
@@ -24,3 +25,7 @@ func _on_button_4_pressed():
 func _on_button_5_pressed():
 	SaveData.set_global_saved_variable("test_variable", SaveData.get_global_saved_variable("test_variable") + 1)
 	SaveData.save_data(SaveData.get_current_profile_number())
+
+
+func _on_button_6_pressed():
+		Fade.fade_and_change_scene("res://src/ui/main_menu/settings_menu/settings_menu.tscn")

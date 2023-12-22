@@ -14,12 +14,12 @@ var priority: float = 0
 
 
 func start(duration = 0.2, frequency: float = 15.0, input_amplitude = 16, input_priority = 0) -> void:
-	if Settings.screen_shake == false:
+	if Settings.screen_shake <= 0.0:
 		return
 	
 	if priority >= self.priority:
 		priority = input_priority
-		amplitude = input_amplitude
+		amplitude = input_amplitude * Settings.screen_shake
 		d_timer.wait_time = duration
 		f_timer.wait_time = 1 / frequency
 		d_timer.start()

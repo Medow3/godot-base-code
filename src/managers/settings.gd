@@ -1,159 +1,88 @@
 extends Node
 
-signal changed
+signal setting_changed(changed_setting_name: String)
 
-enum FULLSCREEN_TYPES {
-	FULLSCREEN,
-	BORDERLESS_FULLSCREEN,
-	OFF
+const FPS_CAP_MAX: int = 300
+
+var _debug_setting_overrides: Dictionary = {
+	"screen_mode": DisplayServer.WINDOW_MODE_WINDOWED,
 }
 
-var keybinds: KeybindManager = KeybindManager.new()
-var fullscreen: int = FULLSCREEN_TYPES.FULLSCREEN
-var cap_fps_at_60: bool = true
-var vsync: DisplayServer.VSyncMode = DisplayServer.VSYNC_ENABLED
-var screen_shake: bool = true
+# All settings must be put in this dictionary as strings and values.
+# Each variable must have a default value that will be used the settins are reset.
+var _settings_variables: Dictionary = {
+	#"keybinds": KeybindManager.new(),
+	"screen_mode": DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN,
+	"fps_cap": 60,
+	"vsync": DisplayServer.VSYNC_ENABLED,
+	"screen_shake_percentage": 1.0,
+	"master_volume_percentage": 1.0,
+	"sound_effects_volume_percentage": 1.0,
+	"music_volume_percentage": 1.0,
+	"ambient_volume_percentage": 1.0,
+}
+var _default_settings_variables: Dictionary = _settings_variables.duplicate(true)
 
-var master_volume: float = 0.4
-var sound_effects_volume: float = 1.0
-var music_volume: float = 1.0
-
-
-
-func on_setting_changed() -> void:
-	SaveData.save_data(-1)
-	emit_signal("changed")
-
-
-
-func set_master_volume(new_value: float) -> void:
-	if new_value != master_volume:
-		master_volume = new_value
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), master_volume)
-		on_setting_changed()
-
-
-func set_music_volume(new_value: float) -> void:
-	if new_value != music_volume:
-		music_volume = new_value
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), music_volume)
-		on_setting_changed()
-
-
-func set_sound_effects_volume(new_value: float) -> void:
-	if new_value != sound_effects_volume:
-		sound_effects_volume = new_value
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound Effects"), sound_effects_volume)
-		on_setting_changed()
-
-
-
-func set_keybind(input_action_name: String, new_input_event_object: InputEvent) -> void:
-	keybinds.update_keybind(input_action_name, new_input_event_object)
-	on_setting_changed()
-
-
-func reset_keybinds_to_default() -> void:
-	pass
-
-
-
-
-func set_full_screen(new_value: int) -> void:
-	assert(new_value >= 0 and new_value <= 2) #,"Invalid fullscreen enum value")
-	if new_value != fullscreen:
-		fullscreen = new_value
-		match fullscreen:
-			FULLSCREEN_TYPES.FULLSCREEN:
-				get_window().borderless = (true)
-				get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (true) else Window.MODE_WINDOWED
-				get_window().always_on_top = (true)
-				get_window().set_size(DisplayServer.screen_get_size())
-				get_window().set_position(Vector2(0, 0))
-			FULLSCREEN_TYPES.BORDERLESS_FULLSCREEN:
-				get_window().borderless = (true)
-				get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (false) else Window.MODE_WINDOWED
-				get_window().set_size(DisplayServer.screen_get_size())
-				get_window().set_position(Vector2(0, 0))
-				get_window().always_on_top = (false)
-			FULLSCREEN_TYPES.OFF:
-				get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN if (false) else Window.MODE_WINDOWED
-				get_window().borderless = (false)
-				get_window().set_size(DisplayServer.screen_get_size())
-				get_window().set_position(Vector2(0, 0))
-				get_window().always_on_top = (false)
-		on_setting_changed()
-
-
-func set_fps_cap_at_60(new_value: bool) -> void:
-	if new_value != cap_fps_at_60:
-		cap_fps_at_60 = new_value
-		if cap_fps_at_60:
-			Engine.max_fps = 60
-		else:
+# Whenever a setting is updated, the code for it in this dictionary is run.
+var _settings_variable_change_code: Dictionary = {
+	#"keybinds": func (value: Variant): 
+		#keybinds.update_keybind(input_action_name, new_input_event_object),
+		#keybinds.update_keybind(value[0], value[1]),
+	"screen_mode": func (value: DisplayServer.WindowMode): 
+		DisplayServer.window_set_mode(value),
+	"fps_cap": func (value: int): 
+		if value > FPS_CAP_MAX:
 			Engine.max_fps = 0
-		on_setting_changed()
+		else:
+			Engine.max_fps = value,
+	"vsync": func (value: DisplayServer.VSyncMode): 
+		DisplayServer.window_set_vsync_mode(value),
+	"screen_shake_percentage": func (value: float): 
+		pass,
+	"master_volume_percentage": func (value: float):
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value)),
+	"sound_effects_volume_percentage": func (value: float): 
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound Effects"), linear_to_db(value)),
+	"music_volume_percentage": func (value: float): 
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value)),
+	"ambient_volume_percentage": func (value: float): 
+		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Environment"), linear_to_db(value)),
+}
 
 
-func set_vsync(new_value: DisplayServer.VSyncMode) -> void:
-	if new_value != vsync:
-		vsync = new_value
-		DisplayServer.window_set_vsync_mode(new_value)
-		on_setting_changed()
+func change_setting(setting_name: String, value: Variant) -> void:
+	assert(setting_name in _settings_variables, "Setting \"" + setting_name + "\" does not exsist.")
+	if value != _settings_variables[setting_name]:
+		_settings_variables[setting_name] = value
+		_settings_variable_change_code[setting_name].call(value)
+		SaveData.save_data(-1)
+		emit_signal("setting_changed", setting_name)
 
 
-func set_screen_shake(new_value: bool) -> void:
-	if new_value != screen_shake:
-		screen_shake = new_value
-		on_setting_changed()
+func get_setting_value(setting_name: String) -> Variant:
+	assert(setting_name in _settings_variables, "Setting \"" + setting_name + "\" does not exsist.")
+	return _settings_variables[setting_name]
 
 
 func reset_settings_to_default() -> void:
-#	keybinds = {
-#		"Jump": [KEY_UP, false],
-#		"Interact": [KEY_DOWN, false],
-#		"Left": [KEY_LEFT, false],
-#		"Right": [KEY_RIGHT, false],
-#		"Attack": [KEY_Z, false],
-#		"Dash": [KEY_C, false],
-#		"Grapple": [KEY_X, false],
-#		"Map": [KEY_CONTROL, false],
-#		"Inventory": [KEY_F, false],
-#		"Carvings": [KEY_G, false],
-#		"Use Patch": [KEY_SHIFT, false],
-#	}
-	fullscreen = FULLSCREEN_TYPES.FULLSCREEN
-	cap_fps_at_60 = true
-	vsync = DisplayServer.VSYNC_ENABLED
-	screen_shake = true
-	
-	master_volume = true
-	sound_effects_volume = true
-	music_volume = true
+	for setting_name in _settings_variables.keys():
+		change_setting(setting_name, _default_settings_variables[setting_name])
+
 
 
 func get_settings_save_data() -> Dictionary:
-	return {
-#		"keybinds": keybinds,
-#		"controller_keybinds": controller_keybinds,
-		"fullscreen": fullscreen,
-		"cap_fps_at_60": cap_fps_at_60,
-		"vsync": vsync,
-		"screen_shake": screen_shake,
-		"master_volume": master_volume,
-		"sound_effects_volume": sound_effects_volume,
-		"music_volume": music_volume,
-	}
+	return _settings_variables.duplicate(true)
 
 
 func load_settings_data(settings_data: Dictionary, version: String) -> void:
-	set_full_screen(settings_data["fullscreen"])
-	set_fps_cap_at_60(true)
-	set_vsync(settings_data["vsync"])
-	set_screen_shake(settings_data["screen_shake"])
-#	set_keybinds(settings_data["keybinds"], settings_data["controller_keybinds"])
-	set_master_volume(settings_data["master_volume"])
-	set_sound_effects_volume(settings_data["sound_effects_volume"])
-	set_music_volume(settings_data["music_volume"])
+	# Force reset all settings to default
+	for setting_name in _default_settings_variables.keys():
+		_settings_variable_change_code[setting_name].call(_default_settings_variables[setting_name])
+	# Load in changed settings
+	for setting_name in settings_data.keys():
+		if setting_name in _settings_variables:
+			change_setting(setting_name, settings_data[setting_name])
 	
-	
+	if OS.is_debug_build():
+		for setting_name in _debug_setting_overrides.keys():
+			change_setting(setting_name, _debug_setting_overrides[setting_name])

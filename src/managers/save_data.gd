@@ -9,7 +9,7 @@ var _global_saved_variables: Dictionary = {
 	# Example: "profile_time": 0.0,
 	"test_variable": 1,
 }
-var _default_global_saved_variables_values: Dictionary # Set in _init() function
+var _default_global_saved_variables_values: Dictionary = _global_saved_variables.duplicate(true)
 
 var _current_profile: int = -1
 var _profiles_data: Dictionary = {
@@ -24,12 +24,6 @@ var _profiles_data: Dictionary = {
 	9: {},
 	10: {},
 }
-
-
-func _init() -> void:
-	_default_global_saved_variables_values = _global_saved_variables.duplicate(true)
-	# Load in any save data if it exists.
-	load_data(-1)
 
 
 func create_new_profile(profile_number: int) -> bool:

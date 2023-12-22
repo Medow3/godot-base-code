@@ -1,0 +1,251 @@
+[gd_scene load_steps=5 format=3 uid="uid://catps1ngalswr"]
+
+[ext_resource type="Script" path="res://src/ui/main_menu/settings_menu/settings_menu.gd" id="1_wixgy"]
+[ext_resource type="PackedScene" uid="uid://c5j18lak2bj07" path="res://src/ui/main_menu/settings_menu/components/setting_slider.tscn" id="2_8rr8l"]
+[ext_resource type="PackedScene" uid="uid://hjehucumec71" path="res://src/ui/main_menu/settings_menu/components/value_label.tscn" id="3_b1ckx"]
+[ext_resource type="PackedScene" uid="uid://casu2a3o1qwvr" path="res://src/ui/main_menu/settings_menu/components/setting_enum.tscn" id="4_apf2r"]
+
+[node name="settings_menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wixgy")
+
+[node name="audio_settings" type="Control" parent="."]
+layout_mode = 2
+anchors_preset = 0
+offset_left = 432.0
+offset_top = 120.0
+offset_right = 432.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="audio_settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -56.0
+offset_right = 432.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterHBoxContainer" type="HBoxContainer" parent="audio_settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="audio_settings/VBoxContainer/MasterHBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Master"
+horizontal_alignment = 2
+
+[node name="value_label" parent="audio_settings/VBoxContainer/MasterHBoxContainer" instance=ExtResource("3_b1ckx")]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "100.0%"
+multiply_values_by = 100.0
+ending_text = "%"
+
+[node name="audio_settings_slider" parent="audio_settings/VBoxContainer/MasterHBoxContainer" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
+layout_mode = 2
+setting_name = "master_volume_percentage"
+value_label = NodePath("../value_label")
+
+[node name="SfxHBoxContainer2" type="HBoxContainer" parent="audio_settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="audio_settings/VBoxContainer/SfxHBoxContainer2"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Sound Effects     
+"
+horizontal_alignment = 2
+
+[node name="value_label" parent="audio_settings/VBoxContainer/SfxHBoxContainer2" instance=ExtResource("3_b1ckx")]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+multiply_values_by = 100.0
+ending_text = "%"
+
+[node name="audio_settings_slider2" parent="audio_settings/VBoxContainer/SfxHBoxContainer2" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
+layout_mode = 2
+setting_name = "sound_effects_volume_percentage"
+value_label = NodePath("../value_label")
+
+[node name="MusicHBoxContainer3" type="HBoxContainer" parent="audio_settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="audio_settings/VBoxContainer/MusicHBoxContainer3"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Music"
+horizontal_alignment = 2
+
+[node name="value_label" parent="audio_settings/VBoxContainer/MusicHBoxContainer3" instance=ExtResource("3_b1ckx")]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+multiply_values_by = 100.0
+ending_text = "%"
+
+[node name="audio_settings_slider3" parent="audio_settings/VBoxContainer/MusicHBoxContainer3" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
+layout_mode = 2
+setting_name = "music_volume_percentage"
+value_label = NodePath("../value_label")
+
+[node name="AmbiantHBoxContainer4" type="HBoxContainer" parent="audio_settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="audio_settings/VBoxContainer/AmbiantHBoxContainer4"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+text = "Ambiant"
+horizontal_alignment = 2
+
+[node name="value_label" parent="audio_settings/VBoxContainer/AmbiantHBoxContainer4" instance=ExtResource("3_b1ckx")]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+multiply_values_by = 100.0
+ending_text = "%"
+
+[node name="audio_settings_slider4" parent="audio_settings/VBoxContainer/AmbiantHBoxContainer4" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
+layout_mode = 2
+setting_name = "ambient_volume_percentage"
+value_label = NodePath("../value_label")
+
+[node name="other_settings" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = 20.0
+offset_right = -43.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="other_settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -52.0
+offset_right = 320.0
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="other_settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="other_settings/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Screen Mode"
+
+[node name="setting_enum" parent="other_settings/VBoxContainer/HBoxContainer4" instance=ExtResource("4_apf2r")]
+layout_mode = 2
+setting_name = "screen_mode"
+values = [0, 3, 4]
+display_values = Array[String](["Windowed", "Boarderless Fullscreen", "Fullscreen"])
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="other_settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="other_settings/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Vsync"
+
+[node name="setting_enum" parent="other_settings/VBoxContainer/HBoxContainer2" instance=ExtResource("4_apf2r")]
+layout_mode = 2
+setting_name = "vsync"
+values = [0, 1, 2, 3]
+display_values = Array[String](["Disabled", "Enabled", "Adaptive", "Mailbox"])
+value_tooltips = Array[String](["No vertical synchronization, which means the game will 
+display frames as fast as possible (tearing may be visible).", "Default vertical synchronization mode, the image 
+is displayed only on vertical blanking intervals 
+(no tearing is visible).", "Behaves like Vsync is Disabled when the framerate drops 
+below your screen's refresh rate to reduce stuttering 
+(tearing may be visible). Otherwise, vertical synchronization 
+is enabled to avoid tearing.", "Displays the most recent image in the queue on vertical 
+blanking intervals, while rendering to the other images 
+(no tearing is visible). works best when at least twice as 
+many frames as your display's refresh rate are rendered."])
+
+[node name="HBoxContainer" type="HBoxContainer" parent="other_settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="other_settings/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "FPS Cap"
+
+[node name="value_label" parent="other_settings/VBoxContainer/HBoxContainer" instance=ExtResource("3_b1ckx")]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Uncapped"
+horizontal_alignment = 1
+vertical_alignment = 1
+custom_value_labels = {
+"305": "Uncapped"
+}
+
+[node name="settings_slider" parent="other_settings/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
+layout_mode = 2
+min_value = 5.0
+max_value = 305.0
+step = 5.0
+value = 5.0
+setting_name = "fps_cap"
+value_label = NodePath("../value_label")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="other_settings/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="other_settings/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Screen Shake"
+
+[node name="value_label" parent="other_settings/VBoxContainer/HBoxContainer3" instance=ExtResource("3_b1ckx")]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+text = "100.0%"
+horizontal_alignment = 2
+vertical_alignment = 1
+multiply_values_by = 100.0
+ending_text = "%"
+
+[node name="settings_slider" parent="other_settings/VBoxContainer/HBoxContainer3" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
+layout_mode = 2
+step = 0.01
+value = 1.0
+setting_name = "screen_shake_percentage"
+value_label = NodePath("../value_label")
+
+[node name="reset_button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 504.0
+offset_top = 560.0
+offset_right = 621.0
+offset_bottom = 614.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Reset Settings
+To Default"
+
+[connection signal="pressed" from="reset_button" to="." method="_on_reset_button_pressed"]
