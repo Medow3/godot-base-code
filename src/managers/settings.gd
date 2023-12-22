@@ -37,7 +37,7 @@ var _settings_variable_change_code: Dictionary = {
 			Engine.max_fps = value,
 	"vsync": func (value: DisplayServer.VSyncMode): 
 		DisplayServer.window_set_vsync_mode(value),
-	"screen_shake_percentage": func (value: float): 
+	"screen_shake_percentage": func (_value: float): 
 		pass,
 	"master_volume_percentage": func (value: float):
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Master"), linear_to_db(value)),
@@ -74,7 +74,7 @@ func get_settings_save_data() -> Dictionary:
 	return _settings_variables.duplicate(true)
 
 
-func load_settings_data(settings_data: Dictionary, version: String) -> void:
+func load_settings_data(settings_data: Dictionary, _version: String) -> void:
 	# Force reset all settings to default
 	for setting_name in _default_settings_variables.keys():
 		_settings_variable_change_code[setting_name].call(_default_settings_variables[setting_name])

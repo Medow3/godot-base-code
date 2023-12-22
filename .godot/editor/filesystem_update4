@@ -32,3 +32,5 @@ res://src/ui/main_menu/settings_menu/components/setting_enum.gd
 res://src/ui/main_menu/settings_menu/components/setting_value_label.gd
 res://src/tools/screen_shaker.tscn
 res://src/tools/screen_shaker.gd
+res://src/managers/game_manager.gd
+res://src/managers/fade.gd

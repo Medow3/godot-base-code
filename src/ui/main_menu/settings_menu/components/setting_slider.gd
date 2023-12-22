@@ -15,10 +15,10 @@ func _reset_setting_value() -> void:
 		value_label.set_value(str(value))
 
 
-func _on_value_changed(value):
+func _on_value_changed(new_value):
 	if is_instance_valid(value_label):
-		value_label.set_value(str(value))
-	Settings.change_setting(setting_name, value)
+		value_label.set_value(str(new_value))
+	Settings.change_setting(setting_name, new_value)
 
 
 func _on_settings_changed_signal_recieved(changed_setting_name: String) -> void:

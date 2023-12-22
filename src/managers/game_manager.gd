@@ -34,7 +34,7 @@ func _input(event: InputEvent) -> void:
 		emit_signal("using_controller_updated")
 
 
-func _on_joystick_configuration_changed(device_id, connected) -> void:
+func _on_joystick_configuration_changed(_device_id, connected) -> void:
 	using_controller = connected
 	controller_being_used = Input.get_joy_name(0)
 	emit_signal("using_controller_updated")

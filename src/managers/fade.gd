@@ -23,9 +23,9 @@ func fade_and_change_scene(scene_path: String,
 		fade_ease: Tween.EaseType = DEFAULT_FADE_EASE, 
 		fade_trans: Tween.TransitionType = DEFAULT_FADE_TRANS) -> void:
 	
-	var change_scene_function: Callable = func (scene_path: String):
+	var change_scene_function: Callable = func (go_to_scene_path: String):
 		SFX.stop_all_sfx(fade_length)
-		get_tree().change_scene_to_file(scene_path)
+		get_tree().change_scene_to_file(go_to_scene_path)
 	
 	fade_out_call_func_fade_in(change_scene_function, [scene_path], fade_length, fade_mid_delay, fade_ease, fade_trans)
 
