@@ -34,3 +34,6 @@ res://src/tools/screen_shaker.tscn
 res://src/tools/screen_shaker.gd
 res://src/managers/game_manager.gd
 res://src/managers/fade.gd
+res://src/ui/main_menu/controls_menu/keybind_changer.tscn
+res://src/ui/main_menu/controls_menu/keybind_changer.gd
+res://src/tools/keybind_manager/keybinds_manager.gd

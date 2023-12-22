@@ -4,20 +4,20 @@ class_name KeybindManager extends Node
 @export var default_keybinds: Dictionary = {}
 
 
-var default_input_actions: Array = []
+var default_input_actions: Array[InputActionKeybinds] = []
 
-var input_actions: Array = [] # Initialized in _init()
+var input_actions: Array[InputActionKeybinds] = [] # Initialized in _init()
 
 
 func _init() -> void:
 	input_actions = set_up_keybind_library()
 
 
-func set_up_keybind_library() -> Array:
-	var all_input_action_keybinds_objects = []
+func set_up_keybind_library() -> Array[InputActionKeybinds]:
+	var all_input_action_keybinds_objects: Array[InputActionKeybinds] = []
 	var all_input_actions_names = InputMap.get_actions()
 	for i in all_input_actions_names:
-		var new_input_action_keybinds = InputActionKeybinds.new()
+		var new_input_action_keybinds: InputActionKeybinds = InputActionKeybinds.new()
 		new_input_action_keybinds.set_to_action(i)
 		all_input_action_keybinds_objects.append(new_input_action_keybinds)
 	default_input_actions = all_input_action_keybinds_objects.duplicate(true)

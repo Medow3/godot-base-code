@@ -12,7 +12,7 @@ class_name SettingEnum extends Control
 @onready var value_label: Label = $HBoxContainer/Label
 @onready var right_arrow: TextureButton = $HBoxContainer/right_arrow
 
-var current_value_index: int
+var _current_value_index: int
 
 
 func _ready() -> void:
@@ -23,28 +23,28 @@ func _ready() -> void:
 
 
 func _reset_setting_value() -> void:
-	current_value_index = values.find(Settings.get_setting_value(setting_name))
-	assert(current_value_index != -1, "Settings value, " + str(Settings.get_setting_value(setting_name)) + " not found in values array.")
+	_current_value_index = values.find(Settings.get_setting_value(setting_name))
+	assert(_current_value_index != -1, "Settings value, " + str(Settings.get_setting_value(setting_name)) + " not found in values array.")
 	_update_value_label_text()
 
 
 func _update_value_label_text() -> void:
-	value_label.text = display_values[current_value_index]
-	tooltip_text = value_tooltips[current_value_index]
-	Settings.change_setting(setting_name, values[current_value_index])
+	value_label.text = display_values[_current_value_index]
+	tooltip_text = value_tooltips[_current_value_index]
+	Settings.change_setting(setting_name, values[_current_value_index])
 
 
 func _on_left_arrow_pressed():
-	current_value_index -= 1
-	if current_value_index < 0:
-		current_value_index = len(values) - 1
+	_current_value_index -= 1
+	if _current_value_index < 0:
+		_current_value_index = len(values) - 1
 	_update_value_label_text()
 
 
 func _on_right_arrow_pressed():
-	current_value_index += 1
-	if current_value_index >= len(values):
-		current_value_index = 0
+	_current_value_index += 1
+	if _current_value_index >= len(values):
+		_current_value_index = 0
 	_update_value_label_text()
 
 

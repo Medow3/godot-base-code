@@ -43,6 +43,14 @@ ui_accept={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":0,"button_index":0,"pressure":0.0,"pressed":false,"script":null)
 ]
 }
+test={
+"deadzone": 0.5,
+"events": []
+}
+test2={
+"deadzone": 0.5,
+"events": []
+}
 
 [layer_names]
 

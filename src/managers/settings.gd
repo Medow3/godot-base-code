@@ -11,7 +11,7 @@ var _debug_setting_overrides: Dictionary = {
 # All settings must be put in this dictionary as strings and values.
 # Each variable must have a default value that will be used the settins are reset.
 var _settings_variables: Dictionary = {
-	#"keybinds": KeybindManager.new(),
+	"keybinds": KeybindManager.new(),
 	"screen_mode": DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN,
 	"fps_cap": 60,
 	"vsync": DisplayServer.VSYNC_ENABLED,
@@ -25,9 +25,8 @@ var _default_settings_variables: Dictionary = _settings_variables.duplicate(true
 
 # Whenever a setting is updated, the code for it in this dictionary is run.
 var _settings_variable_change_code: Dictionary = {
-	#"keybinds": func (value: Variant): 
-		#keybinds.update_keybind(input_action_name, new_input_event_object),
-		#keybinds.update_keybind(value[0], value[1]),
+	"keybinds": func (value: Variant): 
+		pass,
 	"screen_mode": func (value: DisplayServer.WindowMode): 
 		DisplayServer.window_set_mode(value),
 	"fps_cap": func (value: int): 
@@ -57,6 +56,12 @@ func change_setting(setting_name: String, value: Variant) -> void:
 		_settings_variable_change_code[setting_name].call(value)
 		SaveData.save_data(-1)
 		emit_signal("setting_changed", setting_name)
+
+
+func change_keybind(input_action_name: String, new_input_event_object) -> void:
+	get_setting_value("keybinds").update_keybind(input_action_name, new_input_event_object)
+	SaveData.save_data(-1)
+	emit_signal("setting_changed", "keybinds")
 
 
 func get_setting_value(setting_name: String) -> Variant:

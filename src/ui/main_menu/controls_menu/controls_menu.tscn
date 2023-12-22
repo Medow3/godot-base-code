@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://1c1yti6wv2op"]
 
 [ext_resource type="Script" path="res://src/ui/main_menu/controls_menu/controls_menu.gd" id="1"]
-[ext_resource type="PackedScene" path="res://src/ui/main_menu/controls_menu/keybind_changer.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bt1o88yeyub4g" path="res://src/ui/main_menu/controls_menu/keybind_changer.tscn" id="2"]
 
 [node name="controls_menu" type="Control"]
 layout_mode = 3
@@ -26,44 +26,16 @@ columns = 4
 layout_mode = 2
 action_name = "test"
 
-[node name="action_label" parent="GridContainer/keybind_changer" index="0"]
-layout_mode = 2
-
 [node name="Button" parent="GridContainer/keybind_changer" index="1"]
-layout_mode = 2
 focus_neighbor_right = NodePath("../../keybind_changer2/Button")
-
-[node name="Tween" parent="GridContainer/keybind_changer" index="2"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
 
 [node name="keybind_changer2" parent="GridContainer" instance=ExtResource("2")]
 layout_mode = 2
 action_name = "test2"
 display_action_name = "Walk"
 
-[node name="action_label" parent="GridContainer/keybind_changer2" index="0"]
-layout_mode = 2
-
 [node name="Button" parent="GridContainer/keybind_changer2" index="1"]
-layout_mode = 2
 focus_neighbor_left = NodePath("../../keybind_changer/Button")
-
-[node name="Tween" parent="GridContainer/keybind_changer2" index="2"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-editor_description = ""
-script = null
 
 [editable path="GridContainer/keybind_changer"]
 [editable path="GridContainer/keybind_changer2"]
