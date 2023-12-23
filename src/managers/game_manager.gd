@@ -8,6 +8,7 @@ var using_controller: bool = false
 var controller_being_used: String = ""
 
 var global_rng: RandomNumberGenerator = RandomNumberGenerator.new()
+var text_server: TextServerExtension = TextServerExtension.new()
 
 
 func _ready() -> void:

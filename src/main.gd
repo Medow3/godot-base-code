@@ -28,4 +28,8 @@ func _on_button_5_pressed():
 
 
 func _on_button_6_pressed():
-		Fade.fade_and_change_scene("res://src/ui/main_menu/settings_menu/settings_menu.tscn")
+	Fade.fade_and_change_scene("res://src/ui/main_menu/settings_menu/settings_menu.tscn")
+
+
+func _on_controls_pressed():
+	Fade.fade_and_change_scene("res://src/ui/main_menu/controls_menu/controls_menu.tscn")

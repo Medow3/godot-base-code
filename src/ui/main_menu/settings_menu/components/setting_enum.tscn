@@ -3,18 +3,7 @@
 [ext_resource type="Script" path="res://src/ui/main_menu/settings_menu/components/setting_enum.gd" id="1_ilxk0"]
 [ext_resource type="Texture2D" uid="uid://dcc7rp64sg3e7" path="res://assets/art/ui/main_menu/settings_menu/components/enum_button_arrow.png" id="2_6xyh0"]
 
-[node name="setting_enum" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-script = ExtResource("1_ilxk0")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 1
+[node name="setting_enum" type="HBoxContainer"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -26,23 +15,25 @@ offset_right = 10.0
 offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+alignment = 1
+script = ExtResource("1_ilxk0")
 
-[node name="left_arrow" type="TextureButton" parent="HBoxContainer"]
+[node name="left_arrow" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(23, 23)
 layout_mode = 2
-size_flags_horizontal = 3
 focus_neighbor_right = NodePath("../right_arrow")
 focus_next = NodePath("../right_arrow")
 texture_normal = ExtResource("2_6xyh0")
 stretch_mode = 0
 
-[node name="Label" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(80, 0)
+[node name="Label" type="Label" parent="."]
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="right_arrow" type="TextureButton" parent="HBoxContainer"]
+[node name="right_arrow" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(23, 23)
 layout_mode = 2
 focus_neighbor_left = NodePath("../left_arrow")
@@ -50,6 +41,3 @@ focus_previous = NodePath("../left_arrow")
 texture_normal = ExtResource("2_6xyh0")
 stretch_mode = 0
 flip_h = true
-
-[connection signal="pressed" from="HBoxContainer/left_arrow" to="." method="_on_left_arrow_pressed"]
-[connection signal="pressed" from="HBoxContainer/right_arrow" to="." method="_on_right_arrow_pressed"]

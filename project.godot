@@ -24,6 +24,7 @@ Music="*res://src/managers/music.tscn"
 Settings="*res://src/managers/settings.gd"
 SFX="*res://src/managers/sound_fx.tscn"
 SaveData="*res://src/managers/save_data.gd"
+LocalizationTester="*res://src/resources/localization/localization_tester.gd"
 
 [display]
 
@@ -51,6 +52,10 @@ test2={
 "deadzone": 0.5,
 "events": []
 }
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://src/resources/localization/translation_files/Base-Code-Localization - Base.ar.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.bg.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.bs_BA.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.cs.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.da.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.de.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.el.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.en.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.es.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.fi.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.fr.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.he.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.hu.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.it .translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.ja.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.ko.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.nb.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.nl.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.pl.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.pt.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.pt_BR.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.ro.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.ru.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.sv.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.th.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.tr.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.zh.translation", "res://src/resources/localization/translation_files/Base-Code-Localization - Base.zh_HK.translation")
 
 [layer_names]
 

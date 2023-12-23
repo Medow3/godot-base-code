@@ -40,16 +40,24 @@ offset_right = 680.0
 offset_bottom = 544.0
 text = "inc test variable"
 
-[node name="Button6" type="Button" parent="."]
+[node name="options" type="Button" parent="."]
 offset_left = 880.0
 offset_top = 48.0
 offset_right = 1072.0
 offset_bottom = 120.0
-text = "to settings"
+text = "MENU_OPTIONS"
+
+[node name="controls" type="Button" parent="."]
+offset_left = 880.0
+offset_top = 144.0
+offset_right = 1072.0
+offset_bottom = 216.0
+text = "MENU_OPTIONS_CONTROLS"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]
 [connection signal="pressed" from="Button5" to="." method="_on_button_5_pressed"]
-[connection signal="pressed" from="Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="options" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="controls" to="." method="_on_controls_pressed"]

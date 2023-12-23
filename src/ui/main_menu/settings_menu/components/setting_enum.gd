@@ -8,9 +8,9 @@ class_name SettingEnum extends Control
 ## The tooltip for each value.
 @export_multiline var value_tooltips: Array[String] = []
 
-@onready var left_arrow: TextureButton = $HBoxContainer/left_arrow
-@onready var value_label: Label = $HBoxContainer/Label
-@onready var right_arrow: TextureButton = $HBoxContainer/right_arrow
+@onready var left_arrow: TextureButton = $left_arrow
+@onready var value_label: Label = $Label
+@onready var right_arrow: TextureButton = $right_arrow
 
 var _current_value_index: int
 

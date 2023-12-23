@@ -45,7 +45,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="audio_settings/VBoxContainer/MasterHBoxContainer"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Master"
+text = "MENU_LABEL_MASTER_VOLUME"
 horizontal_alignment = 2
 
 [node name="value_label" parent="audio_settings/VBoxContainer/MasterHBoxContainer" instance=ExtResource("3_b1ckx")]
@@ -66,8 +66,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="audio_settings/VBoxContainer/SfxHBoxContainer2"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Sound Effects     
-"
+text = "MENU_LABEL_SFX"
 horizontal_alignment = 2
 
 [node name="value_label" parent="audio_settings/VBoxContainer/SfxHBoxContainer2" instance=ExtResource("3_b1ckx")]
@@ -87,7 +86,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="audio_settings/VBoxContainer/MusicHBoxContainer3"]
 custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Music"
+text = "MENU_LABEL_MUSIC"
 horizontal_alignment = 2
 
 [node name="value_label" parent="audio_settings/VBoxContainer/MusicHBoxContainer3" instance=ExtResource("3_b1ckx")]
@@ -99,26 +98,6 @@ ending_text = "%"
 [node name="audio_settings_slider3" parent="audio_settings/VBoxContainer/MusicHBoxContainer3" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
 layout_mode = 2
 setting_name = "music_volume_percentage"
-value_label = NodePath("../value_label")
-
-[node name="AmbiantHBoxContainer4" type="HBoxContainer" parent="audio_settings/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="audio_settings/VBoxContainer/AmbiantHBoxContainer4"]
-custom_minimum_size = Vector2(120, 0)
-layout_mode = 2
-text = "Ambiant"
-horizontal_alignment = 2
-
-[node name="value_label" parent="audio_settings/VBoxContainer/AmbiantHBoxContainer4" instance=ExtResource("3_b1ckx")]
-custom_minimum_size = Vector2(60, 0)
-layout_mode = 2
-multiply_values_by = 100.0
-ending_text = "%"
-
-[node name="audio_settings_slider4" parent="audio_settings/VBoxContainer/AmbiantHBoxContainer4" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
-layout_mode = 2
-setting_name = "ambient_volume_percentage"
 value_label = NodePath("../value_label")
 
 [node name="other_settings" type="Control" parent="."]
@@ -154,13 +133,13 @@ layout_mode = 2
 [node name="Label" type="Label" parent="other_settings/VBoxContainer/HBoxContainer4"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "Screen Mode"
+text = "MENU_OPTION_SCREEN_MODE"
 
 [node name="setting_enum" parent="other_settings/VBoxContainer/HBoxContainer4" instance=ExtResource("4_apf2r")]
 layout_mode = 2
 setting_name = "screen_mode"
 values = [0, 3, 4]
-display_values = Array[String](["Windowed", "Boarderless Fullscreen", "Fullscreen"])
+display_values = Array[String](["MENU_OPTIONS_WINDOWED", "MENU_OPTIONS_BOARDERLESS_FULLSCREEN", "MENU_OPTIONS_FULLSCREEN"])
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="other_settings/VBoxContainer"]
 layout_mode = 2
@@ -168,23 +147,14 @@ layout_mode = 2
 [node name="Label" type="Label" parent="other_settings/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "Vsync"
+text = "MENU_OPTIONS_VSYNC"
 
 [node name="setting_enum" parent="other_settings/VBoxContainer/HBoxContainer2" instance=ExtResource("4_apf2r")]
 layout_mode = 2
 setting_name = "vsync"
 values = [0, 1, 2, 3]
-display_values = Array[String](["Disabled", "Enabled", "Adaptive", "Mailbox"])
-value_tooltips = Array[String](["No vertical synchronization, which means the game will 
-display frames as fast as possible (tearing may be visible).", "Default vertical synchronization mode, the image 
-is displayed only on vertical blanking intervals 
-(no tearing is visible).", "Behaves like Vsync is Disabled when the framerate drops 
-below your screen's refresh rate to reduce stuttering 
-(tearing may be visible). Otherwise, vertical synchronization 
-is enabled to avoid tearing.", "Displays the most recent image in the queue on vertical 
-blanking intervals, while rendering to the other images 
-(no tearing is visible). works best when at least twice as 
-many frames as your display's refresh rate are rendered."])
+display_values = Array[String](["MENU_OPTION_DISABLED", "MENU_OPTION_ENABLED", "MENU_OPTION_VSYNC_ADAPTIVE", "MENU_OPTION_VSYNC_MAILBOX"])
+value_tooltips = Array[String](["MENU_OPTION_TOOLTIP_VSYNC_DISABLED", "MENU_OPTION_TOOLTIP_VSYNC_ENABLED", "MENU_OPTION_TOOLTIP_VSYNC_ADAPTIVE", "MENU_OPTION_TOOLTIP_VSYNC_MAILBOX"])
 
 [node name="HBoxContainer" type="HBoxContainer" parent="other_settings/VBoxContainer"]
 layout_mode = 2
@@ -192,7 +162,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="other_settings/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "FPS Cap"
+text = "MENU_OPTION_FPS_CAP"
 
 [node name="value_label" parent="other_settings/VBoxContainer/HBoxContainer" instance=ExtResource("3_b1ckx")]
 custom_minimum_size = Vector2(90, 0)
@@ -201,7 +171,7 @@ text = "Uncapped"
 horizontal_alignment = 1
 vertical_alignment = 1
 custom_value_labels = {
-"305": "Uncapped"
+"305": "MENU_OPTION_FPS_UNCAPPED"
 }
 
 [node name="settings_slider" parent="other_settings/VBoxContainer/HBoxContainer" node_paths=PackedStringArray("value_label") instance=ExtResource("2_8rr8l")]
@@ -219,7 +189,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="other_settings/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(80, 0)
 layout_mode = 2
-text = "Screen Shake"
+text = "MENU_OPTION_SCREEN_SHAKE"
 
 [node name="value_label" parent="other_settings/VBoxContainer/HBoxContainer3" instance=ExtResource("3_b1ckx")]
 custom_minimum_size = Vector2(60, 0)
@@ -245,7 +215,17 @@ offset_right = 621.0
 offset_bottom = 614.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Reset Settings
-To Default"
+text = "MENU_OPTION_RESET_SETTINGS"
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 2
+offset_left = 32.0
+offset_top = 40.0
+offset_right = 149.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "MENU_BACK"
 
 [connection signal="pressed" from="reset_button" to="." method="_on_reset_button_pressed"]
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]

@@ -19,7 +19,6 @@ var _settings_variables: Dictionary = {
 	"master_volume_percentage": 1.0,
 	"sound_effects_volume_percentage": 1.0,
 	"music_volume_percentage": 1.0,
-	"ambient_volume_percentage": 1.0,
 }
 var _default_settings_variables: Dictionary = _settings_variables.duplicate(true)
 
@@ -44,8 +43,6 @@ var _settings_variable_change_code: Dictionary = {
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Sound Effects"), linear_to_db(value)),
 	"music_volume_percentage": func (value: float): 
 		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(value)),
-	"ambient_volume_percentage": func (value: float): 
-		AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Environment"), linear_to_db(value)),
 }
 
 

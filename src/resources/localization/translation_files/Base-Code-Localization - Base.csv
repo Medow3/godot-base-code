@@ -1,0 +1,25 @@
+STRING ID,en,fr,es,de,it ,pt_BR,pt,ru,el,tr,da,nb,sv,nl,pl,fi,ja,zh,zh_HK,ko,cs,hu,ro,th,bg,he,ar,bs_BA
+LANGUAGE_EN,English,French,Spanish,German,Italian ,Portuguese (Brazil),Portuguese,Russian,Greek,Turkish,Danish,Norwegian,Swedish,Dutch,Polish,Finnish,Japanese,Simplified Chinese,Traditional Chinese,Korean,Czech,Hungarian,Romanian,Thai,Bulgarian,Hebrew,Arabic,Bosnian
+MENU_OPTIONS_VSYNC,V-sync,VSync,V-sync,Bildschirmsynchronisation,VSync,Vsync,Vsync,Вертикальная синхронизация,Vsync,Dikey Senkronizasyon (Vsync),Vsync,Vsync,Vsync,Vsync,Vsync,Vsync,垂直同期,垂直同步,垂直同步,수직 동기,Vertikální synchronizace obrazu,V-sync,V-sync,V-sync,Отвесна синхронизация,Vsync,تزامن اللقطات مع الشاشة V-sync,V-sync
+MENU_OPTION_DISABLED,Disabled,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_ENABLED,Enabled,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_VSYNC_ADAPTIVE,Adaptive,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_VSYNC_MAILBOX,Mailbox,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_TOOLTIP_VSYNC_DISABLED,"No vertical synchronization, which means the game will \ndisplay frames as fast as possible (tearing may be visible).",,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_TOOLTIP_VSYNC_ENABLED,"Default vertical synchronization mode, the image \nis displayed only on vertical blanking intervals \n(no tearing is visible).",,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_TOOLTIP_VSYNC_ADAPTIVE,"Behaves like Vsync is Disabled when the framerate drops \nbelow your screen's refresh rate to reduce stuttering \n(tearing may be visible). Otherwise, vertical synchronization \nis enabled to avoid tearing.",,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_TOOLTIP_VSYNC_MAILBOX,"Displays the most recent image in the queue on vertical \nblanking intervals, while rendering to the other images \n(no tearing is visible). works best when at least twice as \nmany frames as your display's refresh rate are rendered.",,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_FPS_CAP,FPS Cap,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_FPS_UNCAPPED,Uncapped,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_SCREEN_SHAKE,Screen Shake,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS_SOUND_VOLUME,Volume,Volume,Volumen,Lautstärke,Volume,Volume,Volume,Громкость,Ένταση,Ses Şiddeti,Volumen,Volum,Volym,Volume,Głośność,Äänenvoimakkuus,ボリューム,音量,音量,음량,Hlasitost,Hangerő,Volum,ความดัง,Гръмкост,עוצמה,مستوى الصوت,Jačina Zvuka
+MENU_LABEL_MASTER_VOLUME,Master,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_LABEL_MUSIC,Music,Musique,Música,Musik,Musica,Música,Música,Музыка,Μουσική,Müzik,Musik,Musikk,Musik,Muziek,Muzyka,Musiikki,音楽,音乐,音樂,음악,Hudba,Zene,Muzică,เพลง,Музика,מוזיקה,الموسيقى,Muzika
+MENU_LABEL_SFX,Sound Effects,Effets sonores,Efectos de sonido,Soundeffekte,Effetti sonori,Efeitos Sonoros,Efeitos sonoros,Звуковые эффекты,Sound Effects,Ses Efektleri,Lydeffekter,Lydeffekter,Ljudeffekter,Geluidseffecten,Efekty dźwiękowe,Ääniefektit,SE,音响效果 ,音響效果,음향 효과,Zvukové efekty,Hanghatások,Efecte de sunet,เสียงประกอบ,Звукови ефекти,אפקטים-קוליים,مؤثرات صوتية,Zvučni Efekti
+MENU_OPTION_SCREEN_MODE,Screen Mode,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_SCREEN_SHAKE,Screen Shake,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTION_RESET_SETTINGS,Reset Settings to Default,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_BACK,Back,Retour,Volver,Zurück,Indietro,Voltar,Atrás,Назад,Επιστροφή,Geri,Tilbage,Tilbake,Tillbaka,Terug,Wstecz,Takaisin,戻る,返回,返回,뒤로,Zpět,Vissza,Înapoi,กลับ,Назад,חזרה,الرجوع,Nazad
+MENU_OPTIONS_FULLSCREEN,Fullscreen,Plein écran,Pantalla completa,Vollbild,Schermo intero,Tela cheia,Ecrã inteiro,Во весь экран,Πλήρης οθόνη,Tam ekran,Fuld skærm,Fullskjerm,Fullskärm,Volledig scherm,Pełny ekran,Kokoruutu,フルスクリーン,全屏,全屏,전체화면,Celá obrazovka,Teljes képernyő,Ecran complet,เต็มหน้าจอ,На цял екран,מסך מלא,تكبير الشاشة Fullscreen,Cijeli Zaslon
+MENU_OPTIONS_BOARDERLESS_FULLSCREEN,Boarderless Fullscreen,,,,,,,,,,,,,,,,,,,,,,,,,,,
+MENU_OPTIONS_WINDOWED,Windowed,Fenêtré,Ventana,Fenstermodus,A finestra,Janela,Janela,Оконный режим,Σε παράθυρο,Pencere,Vindue,Vindusmodus,Fönsterläge,Venster,Okno,Ikkunoitu,ウィンドウモード,窗口模式,窗口模式,창 모드,Režim v okně,Ablakban,Fereastră,หน้าต่าง,В прозорец,חלון,الشاشة المصغرة Windowed,U Prozoru

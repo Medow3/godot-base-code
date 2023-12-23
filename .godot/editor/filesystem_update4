@@ -1,39 +1,49 @@
 res://default_env.tres
-res://src/tools/sound_effect_player_2d.tscn
-res://src/resources/dynamic_soundtrack/song_data.gd
-res://src/resources/dynamic_soundtrack/new_resource.tres
-res://src/tools/keybind_manager/input_action_keybinds.gd
-res://src/managers/save_data.gd
-res://src/testing/scene1.tscn
-res://src/testing/scene1.gd
-res://src/ui/main_menu/controls_menu/controls_menu.tscn
-res://src/managers/sound_fx.tscn
 res://src/main.tscn
-res://src/managers/music.tscn
-res://src/managers/fade.tscn
+res://src/testing/scene1.tscn
 res://src/testing/scene2.tscn
-res://src/main.gd
-res://src/managers/settings.gd
-res://default_bus_layout.tres
-res://src/ui/main_menu/visual_options_menu/options_changer.tscn
-res://src/ui/main_menu/visual_options_menu/visual_options_menu.tscn
-res://src/ui/main_menu/settings_menu/settings_menu.tscn
-res://src/ui/main_menu/settings_menu/settings_menu.gd
-res://src/ui/main_menu/settings_menu/setting_changer.tscn
-res://src/ui/main_menu/settings_menu/setting_changer.gd
-res://src/ui/main_menu/settings_menu/audio_settings_slider.gd
-res://src/ui/main_menu/settings_menu/components/audio_settings_slider.tscn
-res://src/ui/main_menu/settings_menu/components/setting_slider.tscn
-res://src/ui/main_menu/settings_menu/components/setting_slider.gd
-res://src/ui/main_menu/settings_menu/setting_value_label.gd
-res://src/ui/main_menu/settings_menu/components/value_label.tscn
-res://src/ui/main_menu/settings_menu/components/setting_enum.tscn
-res://src/ui/main_menu/settings_menu/components/setting_enum.gd
-res://src/ui/main_menu/settings_menu/components/setting_value_label.gd
 res://src/tools/screen_shaker.tscn
-res://src/tools/screen_shaker.gd
-res://src/managers/game_manager.gd
-res://src/managers/fade.gd
+res://src/ui/main_menu/controls_menu/controls_menu.tscn
 res://src/ui/main_menu/controls_menu/keybind_changer.tscn
-res://src/ui/main_menu/controls_menu/keybind_changer.gd
-res://src/tools/keybind_manager/keybinds_manager.gd
+res://src/ui/main_menu/settings_menu/settings_menu.tscn
+res://src/ui/main_menu/settings_menu/components/setting_enum.tscn
+res://src/resources/localization/localization_tester.gd
+res://src/ui/main_menu/settings_menu/components/setting_enum.gd
+res://src/ui/main_menu/settings_menu/components/value_label.tscn
+res://src/ui/main_menu/settings_menu/components/setting_value_label.gd
+res://src/managers/settings.gd
+res://src/ui/main_menu/settings_menu/components/setting_slider.tscn
+res://src/managers/game_manager.gd
+res://src/managers/music.tscn
+res://src/ui/main_menu/settings_menu/settings_menu.gd
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.en.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.fr.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.es.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.de.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.it .translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.pt_BR.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.pt.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.ru.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.el.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.tr.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.da.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.nb.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.sv.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.nl.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.pl.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.fi.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.ja.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.zh.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.zh_HK.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.ko.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.cs.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.hu.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.ro.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.th.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.bg.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.he.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.ar.translation
+res://src/resources/localization/translation_files/Base-Code-Localization - Base.bs_BA.translation
+res://src/main.gd
+res://src/resources/localization/auto_download_localization/config.gd
+res://src/resources/localization/auto_download_localization/gsheet.gd
