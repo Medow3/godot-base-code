@@ -1,21 +1,3 @@
-res://default_env.tres
-res://src/main.tscn
-res://src/testing/scene1.tscn
-res://src/testing/scene2.tscn
-res://src/tools/screen_shaker.tscn
-res://src/ui/main_menu/controls_menu/controls_menu.tscn
-res://src/ui/main_menu/controls_menu/keybind_changer.tscn
-res://src/ui/main_menu/settings_menu/settings_menu.tscn
-res://src/ui/main_menu/settings_menu/components/setting_enum.tscn
-res://src/resources/localization/localization_tester.gd
-res://src/ui/main_menu/settings_menu/components/setting_enum.gd
-res://src/ui/main_menu/settings_menu/components/value_label.tscn
-res://src/ui/main_menu/settings_menu/components/setting_value_label.gd
-res://src/managers/settings.gd
-res://src/ui/main_menu/settings_menu/components/setting_slider.tscn
-res://src/managers/game_manager.gd
-res://src/managers/music.tscn
-res://src/ui/main_menu/settings_menu/settings_menu.gd
 res://src/resources/localization/translation_files/Base-Code-Localization - Base.en.translation
 res://src/resources/localization/translation_files/Base-Code-Localization - Base.fr.translation
 res://src/resources/localization/translation_files/Base-Code-Localization - Base.es.translation
@@ -44,6 +26,15 @@ res://src/resources/localization/translation_files/Base-Code-Localization - Base
 res://src/resources/localization/translation_files/Base-Code-Localization - Base.he.translation
 res://src/resources/localization/translation_files/Base-Code-Localization - Base.ar.translation
 res://src/resources/localization/translation_files/Base-Code-Localization - Base.bs_BA.translation
-res://src/main.gd
-res://src/resources/localization/auto_download_localization/config.gd
-res://src/resources/localization/auto_download_localization/gsheet.gd
+res://default_env.tres
+res://src/main.tscn
+res://src/testing/scene1.tscn
+res://src/testing/scene2.tscn
+res://src/tools/screen_shaker.tscn
+res://src/ui/main_menu/controls_menu/controls_menu.tscn
+res://src/ui/main_menu/controls_menu/keybind_changer.tscn
+res://src/ui/main_menu/settings_menu/settings_menu.tscn
+res://src/ui/main_menu/settings_menu/components/setting_enum.tscn
+res://src/ui/main_menu/settings_menu/components/setting_slider.tscn
+res://src/ui/main_menu/settings_menu/components/value_label.tscn
+res://src/managers/music.tscn
