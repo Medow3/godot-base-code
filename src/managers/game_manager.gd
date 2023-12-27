@@ -18,6 +18,12 @@ func _ready() -> void:
 	Input.connect("joy_connection_changed", Callable(self, "_on_joystick_configuration_changed"))
 
 
+func _process(delta):
+	if OS.is_debug_build():
+		if Input.is_action_just_pressed("Escape"):
+			get_tree().quit()
+
+
 func _input(event: InputEvent) -> void:
 	if ((event is InputEventKey and event.pressed) or (event is InputEventMouseButton and event.pressed)
 			and using_controller):

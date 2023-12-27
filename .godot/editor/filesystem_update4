@@ -43,3 +43,4 @@ res://src/tools/screen_shaker.gd
 res://src/main.gd
 res://src/tools/keybind_manager/keybinds_manager.gd
 res://src/managers/settings.gd
+res://src/managers/game_manager.gd
