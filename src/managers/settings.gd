@@ -24,7 +24,7 @@ var _default_settings_variables: Dictionary = _settings_variables.duplicate(true
 
 # Whenever a setting is updated, the code for it in this dictionary is run.
 var _settings_variable_change_code: Dictionary = {
-	"keybinds": func (value: Variant): 
+	"keybinds": func (_value: Variant): 
 		pass,
 	"screen_mode": func (value: DisplayServer.WindowMode): 
 		DisplayServer.window_set_mode(value),
