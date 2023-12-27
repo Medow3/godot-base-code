@@ -58,7 +58,7 @@ func get_keybind_save_data() -> Dictionary:
 	return save_data
 
 
-func load_keybind_save_data(keybind_data: Dictionary, version: String) -> void:
+func load_keybind_save_data(keybind_data: Dictionary, _version: String) -> void:
 	input_actions = []
 	for i in keybind_data.keys():
 		var new_input_action_keybinds = InputActionKeybinds.new()

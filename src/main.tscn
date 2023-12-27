@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://chai1ar70unnw"]
+[gd_scene load_steps=3 format=3 uid="uid://chai1ar70unnw"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1"]
+[ext_resource type="Script" path="res://src/resources/localization/auto_download_localization/auto_download_localization.gd" id="2_2m6q6"]
 
 [node name="main" type="Node2D"]
 script = ExtResource("1")
@@ -53,6 +54,9 @@ offset_top = 144.0
 offset_right = 1072.0
 offset_bottom = 216.0
 text = "MENU_OPTIONS_CONTROLS"
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_2m6q6")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]

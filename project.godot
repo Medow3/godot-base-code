@@ -25,6 +25,7 @@ Settings="*res://src/managers/settings.gd"
 SFX="*res://src/managers/sound_fx.tscn"
 SaveData="*res://src/managers/save_data.gd"
 LocalizationTester="*res://src/resources/localization/localization_tester.gd"
+InputBuffer="*res://src/managers/input_buffer.gd"
 
 [display]
 
