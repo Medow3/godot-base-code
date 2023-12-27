@@ -39,3 +39,4 @@ res://src/ui/main_menu/settings_menu/components/setting_slider.tscn
 res://src/ui/main_menu/settings_menu/components/value_label.tscn
 res://src/managers/music.tscn
 res://todo.md
+res://src/tools/screen_shaker.gd
