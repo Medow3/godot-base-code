@@ -13,3 +13,4 @@ res://src/tools/keybind_manager/keybind_types.gd
 res://src/managers/settings.gd
 res://src/ui/main_menu/controls_menu/keybind_changer.tscn
 res://src/tools/keybind_manager/input_action_keybinds.gd
+res://todo.md
