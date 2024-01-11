@@ -35,7 +35,7 @@ func _ready() -> void:
 func update_key_display() -> void:
 	match current_state:
 		KEYBINDER_STATES.DEFAULT:
-			button.text = Settings.get_setting_value("keybinds").get_button_string_for_action(action_name, GameManager.using_controller)
+			button.text = Settings.keybinds.get_button_string_for_action(action_name, GameManager.using_controller)
 			button.set("theme_override_colors/font_color", DEFAULT_FONT_COLOR)
 		KEYBINDER_STATES.AWAITING_INPUT:
 			button.text = AWAITING_INPUT_DISPLAY_TEXT
@@ -102,7 +102,7 @@ func change_state(new_state: int) -> void:
 
 
 func check_if_action_unset() -> bool:
-	var key_display_text = Settings.get_setting_value("keybinds").get_button_string_for_action(action_name, GameManager.using_controller)
+	var key_display_text = Settings.keybinds.get_button_string_for_action(action_name, GameManager.using_controller)
 	if key_display_text == InputActionKeybinds.NO_BUTTON_ASSIGNED_TO_ACTION_DISPLAY_TEXT:
 		return true
 	return false

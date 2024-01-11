@@ -15,7 +15,7 @@ func _ready() -> void:
 	global_rng.randomize()
 	using_controller = Input.get_connected_joypads().size() >= 1
 	controller_being_used = Input.get_joy_name(0)
-	Input.connect("joy_connection_changed", Callable(self, "_on_joystick_configuration_changed"))
+	Input.joy_connection_changed.connect(_on_joystick_configuration_changed)
 
 
 func _process(delta):

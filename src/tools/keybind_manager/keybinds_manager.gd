@@ -1,4 +1,4 @@
-class_name KeybindManager extends Node
+class_name KeybindManager extends Resource
 
 #export var keep_default_ui_bindings: bool = true
 @export var default_keybinds: Dictionary = {}

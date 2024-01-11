@@ -1,8 +1,8 @@
 Base Code TODO:
+* Dynamic soundtrack system
 * Rotational screen shake
-* Localiation auto downloading
-* Fix weird Fade between scenes Tween error
+* Keybind saving and loading
 * Fix controller trigger buttons not working for keybinds
 * Add key prompts system
-* Dynamic soundtrack system
-* Keybind saving and loading
+* Fix weird Fade between scenes Tween error
+* Localiation auto downloading

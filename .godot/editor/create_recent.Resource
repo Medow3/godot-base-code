@@ -1,3 +1,4 @@
-SFXData
+SongTransitionData
 SongData
+SFXData
 Resource

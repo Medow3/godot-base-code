@@ -1,4 +1,4 @@
-class_name KeybindTypes extends Node
+class_name KeybindTypes extends Resource
 
 # The input methods you can use as inputs for the game.
 # This is used by the keybind management system.

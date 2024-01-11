@@ -1,6 +1,6 @@
 class_name SFXData extends Resource
 
-## A list of all the posible sound effects that can be played.
+## A list of all the posible sound effects that can be played. Can contain only 1 SFX.
 @export var SFX_pool: Array[SingleSFXData]
 ## A list of all the weights for sound effects.
 @export var SFX_pool_weights: Array[float] = [1.0]
