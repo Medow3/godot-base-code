@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SongTransitionData" load_steps=2 format=3 uid="uid://bte5u6ofmfsup"]
+
+[ext_resource type="Script" path="res://src/resources/dynamic_soundtrack/song_transition_data.gd" id="1_qdfp4"]
+
+[resource]
+script = ExtResource("1_qdfp4")
+custom_transition_points = Array[float]([])
+use_bar_recurring_points = false
+bars_per_recurring_point = 4
+use_beat_recurring_points = false
+beats_per_recurring_point = 1

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="SongData" load_steps=2 format=3 uid="uid://b4f73cuxolsfj"]
+
+[ext_resource type="Script" path="res://src/resources/dynamic_soundtrack/song_data.gd" id="1_04bf6"]
+
+[resource]
+script = ExtResource("1_04bf6")

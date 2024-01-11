@@ -16,17 +16,17 @@ var _rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	_rng.randomize()
-	set_up_music_library_recursive(MUSIC_DIRECTORY_PATH)
+	_set_up_music_library_recursive(MUSIC_DIRECTORY_PATH)
 
 
-func set_up_music_library_recursive(directory_path: String) -> void:
+func _set_up_music_library_recursive(directory_path: String) -> void:
 	var dir = DirAccess.open(directory_path)
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
 			if dir.current_is_dir() and file_name.left(1) != ".":
-				set_up_music_library_recursive(directory_path + file_name + "/")
+				_set_up_music_library_recursive(directory_path + file_name + "/")
 			elif not dir.current_is_dir() and file_name.ends_with(".wav.import") or file_name.ends_with(".ogg.import"):
 				var file_name2 = file_name.replace(".import", "")
 				var music_name = file_name
@@ -49,4 +49,5 @@ func play_song(new_song: String, volume: float = DEFAULT_MUSIC_VOLUME, fade_dura
 		music_player.play()
 		tween = get_tree().create_tween().set_trans(MUSIC_CROSSFADE_TWEEN_TRANS).set_ease(MUSIC_CROSSFADE_TWEEN_EASE)
 		tween.tween_property(music_player, "volume_db", volume, fade_duration).from(-80)
+
 

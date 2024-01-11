@@ -1,13 +1,15 @@
 class_name SongData extends Resource
 
+@export var song_name: StringName
 @export var full_song_file: AudioStreamOggVorbis = null
-@export var layers: Array[AudioStreamOggVorbis]
+## Dictonary types: {String: AudioStreamOggVorbis}
+@export var layer_names_and_files: Dictionary
 
-@export var transition_points_data: TransitionPointsData
+@export_group("Data")
+@export var total_beats_in_song: int = 0
+@export var bpm: int = 60
+@export var beats_per_bar: int = 4
 
-
-func call_func_on_next_beat(to_call: Callable, timer: SceneTreeTimer, my_player: AudioStreamPlayer) -> void:
-	var current_playtime: float = my_player.get_playback_position()
-	timer.start(transition_points_data.get_time_until_next_beat(current_playtime))
-	await timer.timeout
-	to_call.call()
+var current_main_music_player: AudioStreamPlayer = null
+## Dictonary types: {String: AudioStreamOggVorbis}
+var current_layer_names_and_music_players: Dictionary

@@ -1,11 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwaenycxjwtfm"]
 
-[ext_resource type="Script" path="res://src/managers/music.gd" id="1"]
+[ext_resource type="Script" path="res://src/managers/dynamic_music_manager.gd" id="1_75kx2"]
 
 [node name="music" type="Node"]
 process_mode = 3
-script = ExtResource("1")
+script = ExtResource("1_75kx2")
 
-[node name="music_player" type="AudioStreamPlayer" parent="."]
+[node name="music_player1" type="AudioStreamPlayer" parent="."]
+volume_db = -80.0
+bus = &"Music"
+
+[node name="music_player2" type="AudioStreamPlayer" parent="."]
 volume_db = -80.0
 bus = &"Music"
