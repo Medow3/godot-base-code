@@ -14,3 +14,4 @@ res://src/main.gd
 res://src/managers/settings.gd
 res://src/managers/save_data.gd
 res://src/tools/keybind_manager/keybinds_manager.gd
+res://src/tools/keybind_manager/input_action_keybinds.gd

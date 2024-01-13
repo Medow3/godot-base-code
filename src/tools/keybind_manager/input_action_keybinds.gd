@@ -80,6 +80,7 @@ func set_to_action(new_action_name: String) -> void:
 	var action_list = InputMap.action_get_events(new_action_name)
 	for i in action_list:
 		update_keybind(i)
+	
 
 
 func update_keybind(new_keybind_object: InputEvent) -> void:

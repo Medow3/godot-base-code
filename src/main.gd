@@ -2,7 +2,11 @@ extends Node2D
 
 func _ready():
 	SaveData.load_data(-1)
-	#Music.play_song("Radiative")
+
+
+func _process(delta):
+	if Input.is_action_just_pressed("test"):
+		print("test")
 
 
 func _on_play_pressed():

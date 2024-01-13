@@ -11,6 +11,7 @@ var input_actions: Array[InputActionKeybinds] = [] # Initialized in _init()
 
 func _init() -> void:
 	input_actions = set_up_keybind_library()
+	update_input_map()
 
 
 func set_up_keybind_library() -> Array[InputActionKeybinds]:
