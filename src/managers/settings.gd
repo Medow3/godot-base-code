@@ -82,7 +82,7 @@ func get_settings_save_data() -> Dictionary:
 func load_settings_data(settings_data: Dictionary, version: String) -> void:
 	# Force reset all settings to default
 	for setting_name in _default_settings_variables.keys():
-		_settings_variable_change_code[setting_name].call(_default_settings_variables[setting_name])
+		change_setting(setting_name, _default_settings_variables[setting_name])
 	# Load in changed settings
 	for setting_name in settings_data.keys():
 		if setting_name in _settings_variables:
