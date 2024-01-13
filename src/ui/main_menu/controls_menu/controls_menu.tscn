@@ -38,5 +38,13 @@ display_action_name = "Walk"
 [node name="Button" parent="GridContainer/keybind_changer2" index="1"]
 focus_neighbor_left = NodePath("../../keybind_changer/Button")
 
+[node name="keybind_changer3" parent="GridContainer" instance=ExtResource("2")]
+layout_mode = 2
+action_name = "Escape"
+
+[node name="Button" parent="GridContainer/keybind_changer3" index="1"]
+focus_neighbor_left = NodePath("../../keybind_changer/Button")
+
 [editable path="GridContainer/keybind_changer"]
 [editable path="GridContainer/keybind_changer2"]
+[editable path="GridContainer/keybind_changer3"]

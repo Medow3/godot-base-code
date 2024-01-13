@@ -1,11 +1,11 @@
+Control
+Label
+VBoxContainer
 AnimationHandler
 Node
-VBoxContainer
 Button
-Label
 TextureButton
 HBoxContainer
-Control
 HSlider
 Sprite2D
 Timer

@@ -47,7 +47,7 @@ func get_button_string_for_action(action_name: String, for_controller: bool) -> 
 		if i.action_name == action_name:
 			return i.get_button_string_for_action(for_controller)
 	
-	assert(false) #,"Invalid action_name.")
+	assert(false, "Invalid action_name.")
 	return ""
 
 

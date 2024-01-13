@@ -41,3 +41,6 @@ focus_previous = NodePath("../left_arrow")
 texture_normal = ExtResource("2_6xyh0")
 stretch_mode = 0
 flip_h = true
+
+[connection signal="pressed" from="left_arrow" to="." method="_on_left_arrow_pressed"]
+[connection signal="pressed" from="right_arrow" to="." method="_on_right_arrow_pressed"]

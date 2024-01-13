@@ -32,7 +32,7 @@ func _input(event: InputEvent) -> void:
 		if !event.pressed or event.is_echo():
 			return
 			
-		var scancode: int = event.scancode
+		var scancode: int = event.unicode
 		keyboard_timestamps[scancode] = Time.get_ticks_msec()
 	elif event is InputEventJoypadButton:
 		if !event.pressed or event.is_echo():
@@ -54,7 +54,7 @@ func is_action_press_buffered(action: String, buffer_window: int = DEFAULT_BUFFE
 	# the action is buffered.
 	for event in InputMap.action_get_events(action):
 		if event is InputEventKey:
-			var scancode: int = event.scancode
+			var scancode: int = event.unicode
 			if keyboard_timestamps.has(scancode):
 				if Time.get_ticks_msec() - keyboard_timestamps[scancode] <= buffer_window:
 					# Prevent this method from returning true repeatedly and registering duplicate actions.
@@ -85,7 +85,7 @@ func is_action_press_buffered(action: String, buffer_window: int = DEFAULT_BUFFE
 func _invalidate_action(action: String) -> void:
 	for event in InputMap.action_get_events(action):
 		if event is InputEventKey:
-			var scancode: int = event.scancode
+			var scancode: int = event.unicode
 			if keyboard_timestamps.has(scancode):
 				keyboard_timestamps[scancode] = 0
 		elif event is InputEventJoypadButton:
