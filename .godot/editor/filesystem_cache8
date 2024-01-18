@@ -1,9 +1,9 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1705553638
+::res://::1705553898
 default_bus_layout.tres::AudioBusLayout::4166061198271270298::1704322367::0::1::::<><>::
-default_env.tres::Environment::2360497727181106278::1705553638::0::1::::<><>::
+default_env.tres::Environment::2360497727181106278::1705553826::0::1::::<><>::
 icon.png::CompressedTexture2D::7141515589895879567::1673981380::1683991500::1::::<><>::
-todo.md::TextFile::-1::1705553621::0::1::::<><>::
+todo.md::TextFile::-1::1705553818::0::1::::<><>::
 ::res://assets/::1702274101
 ::res://assets/art/::1703213684
 ::res://assets/art/ui/::1703213690
@@ -17,9 +17,9 @@ Radiative.ogg::AudioStreamOggVorbis::6798096938149294269::1685409072::1685409868
 ::res://assets/audio/sound_effects/::1704947430
 on_player_die_in_death_plane.wav::AudioStreamWAV::8043751011560753683::1661538308::1685211818::1::::<><>::
 on_player_get_new_ability.wav::AudioStreamWAV::879353441852377645::1661999690::1685220604::1::::<><>::
-::res://src/::1705553639
+::res://src/::1705553826
 main.gd::GDScript::-1::1705117058::0::1::::<>Node2D<>::
-main.tscn::PackedScene::5264695467185906420::1705553639::0::1::::<><>::res://src/main.gd
+main.tscn::PackedScene::5264695467185906420::1705553826::0::1::::<><>::res://src/main.gd
 tmp.gd::GDScript::-1::1703186712::0::1::::<>Sprite2D<>::
 ::res://src/managers/::1705553572
 fade.gd::GDScript::-1::1703219291::0::1::::<>CanvasLayer<>::
@@ -35,7 +35,7 @@ sound_fx.tscn::PackedScene::5687209175132488773::1705553572::0::1::::<><>::res:/
 ::res://src/resources/::1704947478
 ::res://src/resources/localization/::1703647094
 localization_tester.gd::GDScript::-1::1703305852::0::1::::<>Node<>::
-::res://src/resources/localization/translation_files/::1705553697
+::res://src/resources/localization/translation_files/::1705553699
 Base-Code-Localization - Base.ar.translation::OptimizedTranslation::3509523110134181758::1705553699::0::1::::<><>::
 Base-Code-Localization - Base.bg.translation::OptimizedTranslation::6839121352826058519::1705553699::0::1::::<><>::
 Base-Code-Localization - Base.bs_BA.translation::OptimizedTranslation::1431836776068415017::1705553699::0::1::::<><>::
@@ -85,11 +85,11 @@ keybinds_manager.gd::GDScript::-1::1705553557::0::1::::KeybindManager<>Resource<
 keybind_types.gd::GDScript::-1::1705551288::0::1::::KeybindTypes<>RefCounted<>::
 ::res://src/ui/::1702274102
 ::res://src/ui/main_menu/::1704947618
-::res://src/ui/main_menu/controls_menu/::1705553579
+::res://src/ui/main_menu/controls_menu/::1705553826
 controls_menu.gd::GDScript::-1::1705552807::0::1::::<>Control<>::
-controls_menu.tscn::PackedScene::1830661202703449791::1705553579::0::1::::<><>::res://src/ui/main_menu/controls_menu/controls_menu.gd<>uid://bt1o88yeyub4g::::res://src/ui/main_menu/controls_menu/keybind_changer.tscn
+controls_menu.tscn::PackedScene::1830661202703449791::1705553826::0::1::::<><>::res://src/ui/main_menu/controls_menu/controls_menu.gd<>uid://bt1o88yeyub4g::::res://src/ui/main_menu/controls_menu/keybind_changer.tscn
 keybind_changer.gd::GDScript::-1::1705117033::0::1::::KeybindChanger<>HBoxContainer<>::
-keybind_changer.tscn::PackedScene::3774593274079325316::1705553573::0::1::::<><>::res://src/ui/main_menu/controls_menu/keybind_changer.gd
+keybind_changer.tscn::PackedScene::3774593274079325316::1705553826::0::1::::<><>::res://src/ui/main_menu/controls_menu/keybind_changer.gd
 ::res://src/ui/main_menu/profile_picking_menu/::1705553627
 profile_picking_menu.tscn::PackedScene::6570328663847829730::1705553627::0::1::::<><>::
 ::res://src/ui/main_menu/settings_menu/::1705553573
