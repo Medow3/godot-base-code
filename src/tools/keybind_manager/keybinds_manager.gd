@@ -3,9 +3,6 @@ class_name KeybindManager extends Resource
 #export var keep_default_ui_bindings: bool = true
 @export var default_keybinds: Dictionary = {}
 
-
-var default_input_actions: Array[InputActionKeybinds] = []
-
 var input_actions: Array[InputActionKeybinds] = [] # Initialized in _init()
 
 
@@ -21,13 +18,14 @@ func set_up_keybind_library() -> Array[InputActionKeybinds]:
 		var new_input_action_keybinds: InputActionKeybinds = InputActionKeybinds.new()
 		new_input_action_keybinds.set_to_action(i)
 		all_input_action_keybinds_objects.append(new_input_action_keybinds)
-	default_input_actions = all_input_action_keybinds_objects.duplicate(true)
 	return all_input_action_keybinds_objects
 
 
 func reset_keybinds_to_default() -> void:
-	input_actions = default_input_actions.duplicate(true)
+	InputMap.load_from_project_settings()
+	input_actions = set_up_keybind_library()
 	update_input_map()
+	SaveData.save_data(-1)
 
 
 func update_input_map() -> void:
@@ -53,13 +51,16 @@ func get_button_string_for_action(action_name: String, for_controller: bool) -> 
 
 
 func get_keybind_save_data() -> Dictionary:
-	var save_data := {}
+	var save_data:Dictionary = {}
 	for i in input_actions:
 		save_data[i.action_name] = i.get_save_data()
 	return save_data
 
 
 func load_keybind_save_data(keybind_data: Dictionary, _version: String) -> void:
+	if keybind_data == {}:
+		return
+	
 	input_actions = []
 	for i in keybind_data.keys():
 		var new_input_action_keybinds = InputActionKeybinds.new()

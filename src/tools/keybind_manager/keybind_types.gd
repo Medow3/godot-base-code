@@ -1,4 +1,4 @@
-class_name KeybindTypes extends Resource
+class_name KeybindTypes
 
 # The input methods you can use as inputs for the game.
 # This is used by the keybind management system.

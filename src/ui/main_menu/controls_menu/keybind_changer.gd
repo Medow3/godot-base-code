@@ -51,11 +51,8 @@ func _input(event: InputEvent) -> void:
 		if event is InputEventJoypadMotion:
 			return
 		Settings.change_keybind(action_name, event)
+		get_viewport().set_input_as_handled()
 		
-		# To avoid instantly going back into awaiting input mode after setting 
-		# an action to enter/face button downwait a moment before proceding.
-		if Input.is_action_just_pressed("ui_accept"):
-			await get_tree().create_timer(0.1).timeout
 		change_state(KEYBINDER_STATES.DEFAULT)
 		unset_other_actions_with_duplicate_keys()
 

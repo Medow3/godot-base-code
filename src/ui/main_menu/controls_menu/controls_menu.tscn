@@ -45,6 +45,32 @@ action_name = "Escape"
 [node name="Button" parent="GridContainer/keybind_changer3" index="1"]
 focus_neighbor_left = NodePath("../../keybind_changer/Button")
 
+[node name="reset_controls_to_default" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -134.0
+offset_top = -128.0
+offset_right = 135.0
+offset_bottom = -57.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "MENU_OPTION_RESET_CONTROLS"
+
+[node name="back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 128.0
+offset_bottom = 80.0
+text = "MENU_BACK"
+
+[connection signal="pressed" from="reset_controls_to_default" to="." method="_on_reset_controls_to_default_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+
 [editable path="GridContainer/keybind_changer"]
 [editable path="GridContainer/keybind_changer2"]
 [editable path="GridContainer/keybind_changer3"]

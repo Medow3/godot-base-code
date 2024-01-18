@@ -1,4 +1,4 @@
-class_name InputActionKeybinds extends Resource
+class_name InputActionKeybinds
 
 @export var action_name: String
 @export var key_keybind: InputEventKey
@@ -80,7 +80,6 @@ func set_to_action(new_action_name: String) -> void:
 	var action_list = InputMap.action_get_events(new_action_name)
 	for i in action_list:
 		update_keybind(i)
-	
 
 
 func update_keybind(new_keybind_object: InputEvent) -> void:
@@ -129,7 +128,7 @@ func get_button_string_for_action(for_controller: bool) -> String:
 		if mouse_button_keybind != null and mouse_button_keybind.button_index != 0:
 			output_text = get_mouse_button_string(mouse_button_keybind.button_index)
 		if key_keybind != null:
-			output_text = OS.get_keycode_string(key_keybind.get_keycode_with_modifiers())
+			output_text = OS.get_keycode_string(key_keybind.get_physical_keycode_with_modifiers())
 	else:
 		if joy_button_keybind != null:
 			output_text = JOY_BUTTON_STRINGS[joy_button_keybind.button_index]
@@ -149,7 +148,7 @@ func get_save_data() -> Dictionary:
 	return {
 		"action_name": action_name,
 		"key_keybind": {
-			"keycode": key_keybind.keycode if key_keybind != null else null,
+			"keycode": key_keybind.physical_keycode if key_keybind != null else null,
 			#"alt": key_keybind.alt,
 			#"shift": key_keybind.shift,
 			#"control": key_keybind.control,
@@ -184,7 +183,9 @@ func load_save_data(data: Dictionary) -> void:
 	
 	key_keybind = InputEventKey.new()
 	if data["key_keybind"]["keycode"] != null:
-		key_keybind.keycode = data["key_keybind"]["keycode"]
+		key_keybind.physical_keycode = data["key_keybind"]["keycode"]
+	else:
+		key_keybind = null
 	#key_keybind.alt = data["key_keybind"]["alt"]
 	#key_keybind.shift = data["key_keybind"]["shift"]
 	#key_keybind.control = data["key_keybind"]["control"]
@@ -196,6 +197,8 @@ func load_save_data(data: Dictionary) -> void:
 	#mouse_button_keybind.factor = data["mouse_button_keybind"]["factor"]
 	if data["mouse_button_keybind"]["button_index"] != null:
 		mouse_button_keybind.button_index = data["mouse_button_keybind"]["button_index"]
+	else:
+		mouse_button_keybind = null
 	#mouse_button_keybind.button_mask = data["mouse_button_keybind"]["button_mask"]
 	#mouse_button_keybind.alt = data["mouse_button_keybind"]["alt"]
 	#mouse_button_keybind.shift = data["mouse_button_keybind"]["shift"]
@@ -207,9 +210,14 @@ func load_save_data(data: Dictionary) -> void:
 	joy_button_keybind = InputEventJoypadButton.new()
 	if data["joy_button_keybind"]["button_index"] != null:
 		joy_button_keybind.button_index = data["joy_button_keybind"]["button_index"]
+	else:
+		joy_button_keybind = null
 	#joy_button_keybind.device = data["joy_button_keybind"]["device"]
 	
 	joy_axis_keybind = InputEventJoypadMotion.new()
 	if data["joy_axis_keybind"]["axis"] != null:
 		joy_axis_keybind.axis = data["joy_axis_keybind"]["axis"]
+	else:
+		joy_axis_keybind = null
 	#joy_axis_keybind.device = data["joy_axis_keybind"]["device"]
+	update_input_map_for_keybinds()

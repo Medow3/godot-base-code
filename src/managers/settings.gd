@@ -76,6 +76,7 @@ func reset_settings_to_default() -> void:
 
 
 func get_settings_save_data() -> Dictionary:
+	_settings_variables["keybinds_data"] = keybinds.get_keybind_save_data()
 	return _settings_variables.duplicate(true)
 
 
