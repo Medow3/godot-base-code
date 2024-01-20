@@ -1,7 +1,7 @@
 Base Code TODO:
 * Dynamic soundtrack system (now on it's own branch)
 * Profiles picker
-* Set inputs as handled when control remapping better
+* Add controller button names for all the major controller types
 * Rotational screen shake
 * Fix controller trigger buttons not working for keybinds
 * Add key prompts system

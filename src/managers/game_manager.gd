@@ -18,9 +18,9 @@ func _ready() -> void:
 	Input.joy_connection_changed.connect(_on_joystick_configuration_changed)
 
 
-func _process(delta):
+func _unhandled_key_input(event: InputEvent):
 	if OS.is_debug_build():
-		if Input.is_action_just_pressed("Escape"):
+		if event.is_action_pressed("Escape"):
 			get_tree().quit()
 
 

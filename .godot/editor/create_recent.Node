@@ -1,7 +1,8 @@
+Panel
+VBoxContainer
 Button
 Control
 Label
-VBoxContainer
 AnimationHandler
 Node
 TextureButton

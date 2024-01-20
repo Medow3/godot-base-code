@@ -9,10 +9,10 @@ func _on_back_pressed():
 	Fade.fade_and_change_scene("res://src/main.tscn")
 
 
-func _process(delta):
-	if Input.is_action_just_pressed("test"):
+func _unhandled_input(event: InputEvent):
+	if event.is_action_pressed("test"):
 		print("test")
-	if Input.is_action_just_pressed("test2"):
+	if event.is_action_pressed("test2"):
 		print("test2")
 
 

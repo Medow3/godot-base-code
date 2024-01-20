@@ -50,8 +50,8 @@ func _input(event: InputEvent) -> void:
 		# Joystick motion was always being set. Just getting rid of it.
 		if event is InputEventJoypadMotion:
 			return
-		Settings.change_keybind(action_name, event)
 		get_viewport().set_input_as_handled()
+		Settings.change_keybind(action_name, event)
 		
 		change_state(KEYBINDER_STATES.DEFAULT)
 		unset_other_actions_with_duplicate_keys()
@@ -70,6 +70,7 @@ func unset_action_keybind() -> void:
 
 
 func _on_Button_pressed() -> void:
+	get_viewport().set_input_as_handled()
 	match current_state:
 		KEYBINDER_STATES.DEFAULT:
 			change_state(KEYBINDER_STATES.AWAITING_INPUT)
