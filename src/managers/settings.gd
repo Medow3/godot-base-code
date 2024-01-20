@@ -59,7 +59,6 @@ func change_setting(setting_name: String, value: Variant) -> void:
 
 func change_keybind(input_action_name: String, new_input_event_object) -> void:
 	keybinds.update_keybind(input_action_name, new_input_event_object)
-	_settings_variables["keybinds_data"] = keybinds.get_keybind_save_data()
 	SaveData.save_data(-1)
 	emit_signal("setting_changed", "keybinds_data")
 
@@ -81,14 +80,11 @@ func get_settings_save_data() -> Dictionary:
 
 
 func load_settings_data(settings_data: Dictionary, version: String) -> void:
-	# Force reset all settings to default
-	for setting_name in _default_settings_variables.keys():
-		change_setting(setting_name, _default_settings_variables[setting_name])
-	# Load in changed settings
-	for setting_name in settings_data.keys():
-		if setting_name in _settings_variables:
-			change_setting(setting_name, settings_data[setting_name])
+	keybinds = KeybindManager.new()
 	keybinds.load_keybind_save_data(settings_data["keybinds_data"], version)
+	for setting_name in settings_data.keys():
+		if setting_name in _settings_variables and setting_name != "keybinds_data":
+			change_setting(setting_name, settings_data[setting_name])
 	
 	if OS.is_debug_build():
 		for setting_name in _debug_setting_overrides.keys():
