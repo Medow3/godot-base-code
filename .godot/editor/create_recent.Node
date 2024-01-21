@@ -1,6 +1,7 @@
+TextEdit
+Button
 Panel
 VBoxContainer
-Button
 Control
 Label
 AnimationHandler

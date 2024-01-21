@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2ndxauaee18a"]
+
+[ext_resource type="Script" path="res://src/ui/main_menu/profile_picking_menu/profile_picker.gd" id="1_cn6pn"]
+
+[node name="profile_picker" type="Button"]
+offset_right = 311.0
+offset_bottom = 88.0
+text = "1"
+script = ExtResource("1_cn6pn")
+
+[node name="profile_name" type="TextEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 114.0
+offset_bottom = 36.0
+text = "Profile 1"
+editable = false
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]
