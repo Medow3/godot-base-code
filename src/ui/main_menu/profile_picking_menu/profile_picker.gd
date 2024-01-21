@@ -21,5 +21,9 @@ func set_profile_number(value: int) -> void:
 
 
 func _on_pressed():
+	if SaveData.create_new_profile(profile_number):
+		# First time running the save file
+		pass
+	
 	SaveData.select_profile(profile_number)
 	Fade.fade_and_change_scene(go_to_scene)

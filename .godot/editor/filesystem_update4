@@ -1,10 +1,3 @@
-res://src/ui/main_menu/profile_picking_menu/profile_picker.gd
 res://default_env.tres
 res://src/ui/main_menu/profile_picking_menu/profile_picker.tscn
-res://todo.md
-res://src/ui/main_menu/profile_picking_menu/profile_picking_menu.tscn
-res://src/ui/main_menu/profile_picking_menu/profile_picking_menu.gd
-res://src/main.tscn
-res://src/ui/main_menu/controls_menu/controls_menu.tscn
-res://src/ui/main_menu/controls_menu/keybind_changer.tscn
-res://src/managers/fade.tscn
+res://src/ui/main_menu/profile_picking_menu/profile_picker.gd
